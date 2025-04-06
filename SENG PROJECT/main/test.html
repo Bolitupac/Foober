@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menuStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Menu</title>
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            padding-top: 20px;
+            transition: left 0.3s ease;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            padding: 15px;
+            border-bottom: 1px solid gray;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+        .footer {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .footer .social-icons {
+            margin: 10px 0;
+        }
+        .footer .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        .footer ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        .footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+   <nav class="nav-bar">
+    <div class="left-section">
+        <div class="hamburger" onclick="toggleSidebar()">&#9776;</div>
+        <div class="logo">
+            <img src="picture/logo.jpg" alt="">
+            <span>Foober</span>
+        </div>
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search for food...">
+    </div>
+    <div class="icons">
+        <i class="fas fa-shopping-cart"></i>
+        <i class="fas fa-user"></i>
+        <i class="fas fa-bell"></i>
+    </div>
+   </nav>
+
+   <div class="sidebar" id="sidebar">
+       <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+       <ul>
+           <li><a href="#">Home</a></li>
+           <li><a href="#">Browse All</a></li>
+           <li><a href="#">Fast Food</a></li>
+           <li><a href="#">Drinks</a></li>
+           <li><a href="#">African Food</a></li>
+       </ul>
+   </div>
+
+   <footer class="footer">
+       <div class="social-icons">
+           <a href="#"><i class="fab fa-facebook"></i></a>
+           <a href="#"><i class="fab fa-twitter"></i></a>
+           <a href="#"><i class="fab fa-instagram"></i></a>
+           <a href="#"><i class="fab fa-linkedin"></i></a>
+       </div>
+       <ul>
+           <li><a href="#">About Us</a></li>
+           <li><a href="#">FAQ</a></li>
+           <li><a href="#">Live Chat</a></li>
+       </ul>
+       <p>&copy; 2025 Foober. All rights reserved.</p>
+   </footer>
+
+   <script>
+       function toggleSidebar() {
+           const sidebar = document.getElementById("sidebar");
+           if (sidebar.style.left === "0px") {
+               sidebar.style.left = "-250px";
+           } else {
+               sidebar.style.left = "0px";
+           }
+       }
+   </script>
+</body>
+</html>
